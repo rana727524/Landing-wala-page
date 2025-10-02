@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EarnX HUB Landing Page</title>
+  <style>
+    /* General Reset */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+    body{
+      background: linear-gradient(135deg,#000000,#f35b04,#000000);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      color:white;
+      perspective: 1000px;
+    }
+
+    /* Running Headline */
+    .marquee-container{
+      width:100%;
+      overflow:hidden;
+      white-space:nowrap;
+      border-bottom: 2px solid #000000;
+      background: rgba(255,255,255,0.05);
+      padding:10px 0;
+    }
+    .marquee{
+      display:inline-block;
+      animation: marquee 15s linear infinite;
+      font-size:1.3rem;
+      font-weight:700;
+    }
+    @keyframes marquee{
+      0%{transform: translateX(100%);}
+      100%{transform: translateX(-100%);}
+    }
+
+    /* Center Section */
+    .center-section{
+      margin-top:80px;
+      text-align:center;
+      transform: rotateX(10deg) rotateY(-5deg);
+      animation: popIn 1s ease-out;
+    }
+    @keyframes popIn{
+      0%{opacity:0; transform: rotateX(90deg) scale(0);}
+      100%{opacity:1; transform: rotateX(10deg) scale(1);}
+    }
+    .channel-name{
+      font-size:3rem;
+      font-weight:900;
+      margin-bottom:20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .telegram-btn{
+      padding:15px 30px;
+      font-size:1.2rem;
+      font-weight:700;
+      background:#0088cc;
+      color:white;
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .telegram-btn:hover{
+      transform: scale(1.1) rotateX(10deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    }
+
+    /* iPhone mockup */
+    .iphone {
+      position: relative;
+      width: 300px;
+      height: 600px;
+      margin: 40px auto;
+      border: 16px solid #333;
+      border-radius: 40px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      background: black;
+    }
+    .iphone iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:auto;
+      margin-bottom:20px;
+      font-size:1.1rem;
+      transform: rotateX(5deg);
+    }
+    footer a{
+      color:#ffdd59;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    /* Pop-up animation */
+    .popup{
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(255,255,255,0.95);
+      color:#333;
+      padding:20px 30px;
+      border-radius:20px;
+      font-weight:700;
+      box-shadow:0 10px 30px rgba(0,0,0,0.6);
+      animation: popupIn 0.7s forwards;
+      z-index:100;
+    }
+    @keyframes popupIn{
+      0%{transform: translate(-50%, -50%) scale(0);}
+      80%{transform: translate(-50%, -50%) scale(1.1);}
+      100%{transform: translate(-50%, -50%) scale(1);}
+    }
+    .popup button{
+      margin-top:15px;
+      padding:10px 20px;
+      font-weight:700;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      background:#0088cc;
+      color:white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Running Headline -->
+  <div class="marquee-container">
+    <div class="marquee">Join our telegram channel and start earning journey 💸</div>
+  </div>
+
+  <!-- Center Section -->
+  <div class="center-section">
+    <div class="channel-name">EARNX HUB</div>
+    <a href="https://t.me/+wLLrKGMjx5owZjQ1" target="_blank">
+      <button class="telegram-btn">Join Telegram</button>
+    </a>
+
+    <!-- iPhone with YouTube Short video -->
+    <div class="iphone">
+      <iframe 
+        width="100%" height="100%"
+        src="https://www.youtube.com/embed/sKcqMIDLCkw?autoplay=1&mute=1&loop=1&playlist=sKcqMIDLCkw"
+        title="YouTube Short"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        style="border-radius:24px;">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Contact Ads Manager: <a href="https://t.me/Henrik_parker" target="_blank">Click Here</a>
+  </footer>
+
+  <!-- Pop-up Animation -->
+  <div class="popup" id="popup">
+    Welcome to EarnX HUB! 🚀<br>
+    <button onclick="closePopup()">Let's Go</button>
+  </div>
+
+  <script>
+    function closePopup(){
+      document.getElementById('popup').style.display='none';
+    }
+    setTimeout(()=>{document.getElementById('popup').style.display='none'},5000);
+  </script>
+
+</body>
+</html>
